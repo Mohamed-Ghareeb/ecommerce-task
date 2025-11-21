@@ -1,81 +1,78 @@
-📦 E-commerce API — Laravel Backend
+## E-commerce API — Laravel Backend
+ 
+#### A clean and E-commerce REST API built with Laravel 12, featuring:
 
-This is a simple e-commerce backend built using Laravel 11, implementing features such as:
 
-User authentication
+🔐 User Authentication
 
-Products & categories
+📦 Product management
 
-Cart management
+🛒 Cart System
 
-Checkout process
+🧾 Checkout & Orders
 
-API documentation using Scramble
+📄 Auto-Generated API Docs using Scramble
 
-Clean service-based architecture
+🧱 Service-based Architecture for Clean Code
 
-🚀 Tech Stack
+## 🚀 Tech Stack
 
-Laravel 11
+#### Laravel 12 
 
-MySQL
+#### PHP 8.2+
 
-Scramble for API documentation
+#### MySQL
 
-Pest / PHPUnit (optional)
+#### Laravel Scramble
 
-PHP 8.2+
+## Note : 
 
-🔧 Installation & Setup
-1️⃣ Clone the project
-git clone https://github.com/mohamed-ghareeb/your-repo.git
+#### Laravel Scramble acts as a lightweight alternative to Postman, providing an easy-to-use in-browser API playground where you can explore, test, and interact with your endpoints directly without any external tools.
+
+## 🔧 Installation & Setup
+
+Follow these steps to run the project locally:
+
+#### 1️⃣ Clone the repository
+git clone https://github.com/mohamed-ghareeb/ecommerce-task 
+
 cd your-repo
 
-2️⃣ Install dependencies
+#### 2️⃣ Install dependencies
+
 composer install
 
-3️⃣ Environment setup
-
-Duplicate .env.example:
+#### 3️⃣ Configure environment 
 
 cp .env.example .env
 
 
-Generate application key:
+#### Generate application key:
 
 php artisan key:generate
 
 
-Configure database credentials in .env.
+Update .env with your database credentials.
 
-4️⃣ Run migrations & seeders
+#### 4️⃣ Migrate & Seed database
+
 php artisan migrate --seed
 
-5️⃣ Start the server
+#### 5️⃣ Start the server
 php artisan serve
 
-📘 API Documentation (Scramble)
+#### 📘 API Documentation and Usage (Scramble)
 
-This project uses Laravel Scramble to generate beautiful API documentation.
+This project uses Laravel Scramble to automatically generate API documentation.
 
-✔️ Generate documentation
-
-Before exporting the docs, Scramble must analyze your routes:
-
+#### ✔️ Step 1 — Analyze routes
 php artisan scramble:analyze
 
-
-Then export the final documentation:
-
+#### ✔️ Step 2 — Export documentation
 php artisan scramble:export
 
-✔️ Access API docs
+#### ✔️ Access the generated docs
 
-After exporting, the documentation will be available at:
+After exporting, open:
 
-/docs
-
-
-Or inside:
-
-public/docs/index.html
+http://localhost:8000/docs/api#/
