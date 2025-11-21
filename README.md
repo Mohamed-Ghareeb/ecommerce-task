@@ -29,6 +29,10 @@
 
 #### Laravel Scramble acts as a lightweight alternative to Postman, providing an easy-to-use in-browser API playground where you can explore, test, and interact with your endpoints directly without any external tools.
 
+## DB Diagram :
+
+https://dbdiagram.io/d/6920e341228c5bbc1afa2535
+
 ## 🔧 Installation & Setup
 
 Follow these steps to run the project locally:
