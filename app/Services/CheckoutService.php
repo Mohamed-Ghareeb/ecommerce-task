@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enums\ProductStatus;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
@@ -48,7 +49,11 @@ class CheckoutService
                 ]));
 
                 $product->decrement('stock', $item['quantity']);
-
+                
+                $product->updateQuietly([
+                    'status' => $product->stock - $item['quantity'] <= 0 ? ProductStatus::OUT_OF_STOCK : ProductStatus::IN_STOCK,
+                ]);
+                
                 $orderItemsData[] = [
                     'order_id'   => $order->id,
                     'product_id' => $product->id,

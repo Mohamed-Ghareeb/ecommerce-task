@@ -21,11 +21,4 @@ class Product extends Model
     protected $casts = [
         'status' => ProductStatus::class,
     ];
-
-    protected static function booted()
-    {
-        static::saving(function ($product) {
-            $product->status = $product->stock == 0 ? ProductStatus::OUT_OF_STOCK : ProductStatus::IN_STOCK;
-        });
-    }
 }

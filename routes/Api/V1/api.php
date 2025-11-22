@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\CartController;
 use App\Http\Controllers\Api\V1\CheckoutController;
+use App\Http\Controllers\Api\V1\DashboardStatisticsController;
 use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,9 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::middleware('auth:api')->group(function () {
+        // statistics endpoint
+        Route::get('dashboard/statistics', DashboardStatisticsController::class);
+
         // product endpoints
         Route::apiResource('products', ProductController::class);
 
