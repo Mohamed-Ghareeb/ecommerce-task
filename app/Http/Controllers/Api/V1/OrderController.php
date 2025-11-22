@@ -11,7 +11,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return OrderResource::collection(Order::with(['items', 'user'])->paginate());
+        return OrderResource::collection(Order::with(['user'])->paginate());
     }
 
     public function show(Order $order)
