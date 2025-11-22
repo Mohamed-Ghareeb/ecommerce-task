@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\CartController;
 use App\Http\Controllers\Api\V1\CheckoutController;
 use App\Http\Controllers\Api\V1\DashboardStatisticsController;
+use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,9 @@ Route::prefix('v1')->group(function () {
 
         // product endpoints
         Route::apiResource('products', ProductController::class);
+
+        // orders endpoints
+        Route::apiResource('orders', OrderController::class)->only(['index', 'show']);
 
         // Cart endpoints
         Route::prefix('cart')->group(function () {
