@@ -13,6 +13,10 @@ class ProductService
 
     public function update(Product $product, array $data)
     {
+        if (isset($data['stock'])) {
+            $data['status'] = $data['stock'] > 0 ? 'in_stock' : 'out_of_stock';
+        }
+
         $product->update($data);
 
         return $product;
