@@ -40,6 +40,7 @@ class AuthController extends Controller
             'message'    => 'Logged in successfully',
             'token'      => $token,
             'type'       => 'bearer',
+            'user'       => new UserResource(auth()->user()),
             'expires_in' => auth()->factory()->getTTL() * 60,
         ]);
     }

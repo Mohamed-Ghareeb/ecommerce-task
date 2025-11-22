@@ -49,11 +49,11 @@ class CheckoutService
                 ]));
 
                 $product->decrement('stock', $item['quantity']);
-                
+
                 $product->updateQuietly([
                     'status' => $product->stock - $item['quantity'] <= 0 ? ProductStatus::OUT_OF_STOCK : ProductStatus::IN_STOCK,
                 ]);
-                
+
                 $orderItemsData[] = [
                     'order_id'   => $order->id,
                     'product_id' => $product->id,
